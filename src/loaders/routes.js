@@ -7,6 +7,7 @@ const app = express();
 // Client Route Code
 const index = require('../routes/client/index');
 const confirmation = require('../routes/client/confirmation');
+const cartCheckout = require('../routes/client/cartCheckout');
 
 // Server Route Code
 const orderLines = require('../routes/server/order-lines');
@@ -22,7 +23,7 @@ const serviceUnavailable = require('../routes/both/500.js');
 // Set Client Route URLS
 app.use('/', index);
 app.use('/confirmation', confirmation);
-
+app.use('/cart-checkout', cartCheckout);
 // Set Server Route URLS
 app.use('/push', push);
 app.use('/order-lines', orderLines);
